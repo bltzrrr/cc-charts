@@ -3,7 +3,7 @@ Chart.js implementation
 
 ## NPM
 ~~~~
-npm install @bltzrrr/cc-charts`
+npm install @bltzrrr/cc-charts
 ~~~~
 
 ## Usage
