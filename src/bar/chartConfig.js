@@ -14,10 +14,14 @@ export default (options) => ({
         },
         scales: {
             yAxes: [{
+                stacked: options.stacked,
                 ticks: {
                     beginAtZero: true
                 }
-            }]
+            }],
+            xAxes: options.stacked ? [{
+                stacked: true
+            }] : []
         }
     }
 })
