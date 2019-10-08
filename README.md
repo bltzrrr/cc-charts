@@ -2,14 +2,20 @@
 Chart.js implementation
 
 ## NPM
-`npm install @bltzrrr/cc-charts`
+~~~~
+npm install @bltzrrr/cc-charts`
+~~~~
 
 ## Usage
 Import chart module:
-`import chart from '@bltzrrr/cc-charts';`
+~~~~
+import chart from '@bltzrrr/cc-charts';
+~~~~
 
 Create root element
-`<canvas id="someChart"></canvas>`
+~~~~
+<canvas id="someChart"></canvas>
+~~~~
 
 ### Bar chart
 Pass data and set options:
