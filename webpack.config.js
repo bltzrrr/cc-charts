@@ -10,7 +10,9 @@ module.exports = (env) => ({
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    library: 'ccCharts',
+    libraryTarget: 'umd'
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'My website',
