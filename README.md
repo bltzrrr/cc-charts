@@ -64,6 +64,20 @@ let chartOptions = {
 }
 ~~~~
 
+### Stacked bar chart
+Stacked bar chart is initialized by setting *stacked* property
+~~~~
+let chartOptions = {
+    id: 'someChart',
+    type: 'bar',
+    data: barData,
+    height: 680,
+    width: 680,
+    heading: { title: 'Bar title', axisLabel: 'Label test' },
+    stacked: true
+}
+~~~~
+
 ### Doughnut chart
 Pass data and set options:
 ~~~~
