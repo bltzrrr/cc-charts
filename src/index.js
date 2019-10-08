@@ -17,5 +17,5 @@ function init() {
 }
 
 export default {
-    init
+    a: '123'
 }
