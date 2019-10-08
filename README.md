@@ -5,6 +5,9 @@ Chart.js implementation
 `npm install @bltzrrr/cc-charts`
 
 ## Usage
+Import chart module:
+`import chart from '@bltzrrr/cc-charts';`
+
 Create root element
 `<canvas id="someChart"></canvas>`
 
