@@ -1,14 +1,13 @@
-import chartData from './chartData.js';
 import { bar } from '../helpers.js';
 
-const data = {
-    labels: bar.getLabels(chartData),
-    datasets: bar.getDataSets(chartData)
-};
+const getData = (dataSource) => ({
+    labels: bar.getLabels(dataSource),
+    datasets: bar.getDataSets(dataSource)
+});
 
-export default {
+export default (options) => ({
     type: 'bar',
-    data: data,
+    data: getData(options.data),
     options: {
         legend: {
             position: 'bottom'
@@ -21,4 +20,4 @@ export default {
             }]
         }
     }
-}
+})

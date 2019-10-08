@@ -1,16 +1,16 @@
-import chartData from './chartData.js';
 import { doughnut } from '../helpers.js';
 import chartDataLabels from 'chartjs-plugin-datalabels';
 
-const data = {
-    labels: doughnut.getLabels(chartData),
-    datasets: doughnut.getDataSets(chartData)
-};
+const getData = (dataSource) => ({
+    labels: doughnut.getLabels(dataSource),
+    datasets: doughnut.getDataSets(dataSource)
+});
 
 const afterLayout = {
     afterLayout(chart) {
         let chartId = chart.canvas.getAttribute('id');
         let chartElement = document.getElementById(chartId);
+        let wrapper = chartElement.parentNode;
         let config = chart.config;
         let chartWidth = chart.width - chart.legend.width; 
         if (config.centerText) {
@@ -28,15 +28,15 @@ const afterLayout = {
             }
             content.classList.add('cc-chart-element__center');
             content.style.left = chartWidth / 2 + 'px';
-            content.style.top = chartElement.clientHeight / 2 + 'px';
+            content.style.top = wrapper.clientHeight / 2 + 'px';
             parent.append(content);
         }
     }
 }
 
-export default {
+export default (options) => ({
     type: 'doughnut',
-    data: data,
+    data: getData(options.data),
     plugins: [chartDataLabels, afterLayout],
     options: {
         legend: {
@@ -57,10 +57,5 @@ export default {
             }
         }
     },
-    centerText: {
-        title: 'Madrid',
-        label: 'Total Market Size',
-        value: '$1234000',
-        subText: 'billion'
-    }
-}
+    centerText: options.centerText
+})

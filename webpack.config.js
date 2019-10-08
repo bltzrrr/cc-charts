@@ -14,10 +14,6 @@ module.exports = (env) => ({
     library: 'ccCharts',
     libraryTarget: 'umd'
   },
-  plugins: [new HtmlWebpackPlugin({
-    title: 'My website',
-    template: './src/index.html'
-  })],
   module: {
     rules: [
       {
@@ -27,14 +23,6 @@ module.exports = (env) => ({
           'css-loader',
           'sass-loader'
         ]
-      }, {
-        test: /\.html$/,
-        use: [{
-          loader: 'html-loader',
-          options: {
-            interpolate: true
-          }
-        }]
       }
     ]
   }
